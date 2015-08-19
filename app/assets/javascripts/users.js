@@ -1,11 +1,7 @@
 $(document).ready(function() {
-    
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
-  
   // Watch for a form submission:
-  
   $("#form-submit-btn").click(function(event) {
-      
     event.preventDefault();
     $('input[type=submit]').prop('disabled', true);
     var error = false;
@@ -14,9 +10,7 @@ $(document).ready(function() {
         expMonth = $('#card_month').val(),
         expYear = $('#card_year').val();
     if (!error) {
-        
       // Get the Stripe token:
-      
       Stripe.createToken({
         number: ccNum,
         cvc: cvcNum,
